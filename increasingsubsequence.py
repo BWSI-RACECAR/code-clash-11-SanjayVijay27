@@ -50,7 +50,7 @@ class Solution:
             for i in range(1, len(arr)):
                 maxNum = arr[i-1]
                 for j in range(i, len(arr)):
-                    if arr[j] > maxNum:
+                    if arr[j] >= maxNum:
                         length += 1
                         maxNum = arr[j]
                 if length > maximum:
