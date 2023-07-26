@@ -45,7 +45,7 @@ class Solution:
                 return 0
             
             length = 1
-            maximum = 0
+            maximum = 1
             
             for i in range(1, len(arr)):
                 maxNum = arr[i-1]
