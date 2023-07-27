@@ -41,23 +41,18 @@ class Solution:
             #return type: int
             
             #TODO: Write code below to return an int with the solution to the prompt.
-            if len(arr) == 0:
+            length = len(arr)
+            if length == 0:
                 return 0
-            
-            length = 1
-            maximum = -1
-            
-            for i in range(1, len(arr)):
-                maxNum = arr[i-1]
-                for j in range(i, len(arr)):
-                    if arr[j] >= maxNum:
-                        length += 1
-                        maxNum = arr[j]
-                if length > maximum:
-                    maximum = length + 0
-                length = 1
-            
-            return maximum
+
+            l1 = [1] * length
+
+            for i in range(1, length):
+                for j in range(i):
+                    if arr[i] > arr[j]:
+                        l1[i] = max(l1[i], l1[j] + 1)
+
+            return max(l1)
 
 def main():
     array = input().split(" ")
